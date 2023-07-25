@@ -1,10 +1,18 @@
 {
   "expo": {
-    "name": "fund",
-    "slug": "fund",
-    "version": "1.0.0",
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location to more accurately display your position on the map and display nearby organizations"
+        }
+      ]
+    ],
+    "name": "Союз Ветеранов Спорта",
+    "slug": "cbc",
+    "version": "2.1.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/1024x1024bb.png",
     "userInterfaceStyle": "light",
     "experiments": {
       "tsconfigPaths": true
@@ -18,12 +26,28 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "config": {
+        "googleMapsApiKey": "AIzaSyC3VCOZ0LFoMhaaV3mRIyjhzT_BL-YiIqs"
+      },
+      "bundleIdentifier": "com.peragok56.svsmobile",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Allow $(PRODUCT_NAME) to use your location to more accurately display your position on the map and display nearby organizations",
+        "NSLocationWhenInUseUsageDescription": "Allow $(PRODUCT_NAME) to use your location to more accurately display your position on the map and display nearby organizations",
+        "NSLocationAlwaysUsageDescription": "Allow $(PRODUCT_NAME) to use your location to more accurately display your position on the map and display nearby organizations",
+        "NSLocationUsageDescription": "Allow $(PRODUCT_NAME) to use your location to more accurately display your position on the map and display nearby organizations"
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/1024x1024bb.png",
         "backgroundColor": "#ffffff"
+      },
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyC3VCOZ0LFoMhaaV3mRIyjhzT_BL-YiIqs"
+        }
       },
       "package": "com.haskiro.cbc"
     },

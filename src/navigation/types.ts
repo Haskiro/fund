@@ -2,7 +2,8 @@ export type RootStackParams = {
     Profile: undefined;
     // Home: undefined;
     Places: PlaceStackParams;
-    MapStack: MapStackParams
+    MapStack: MapStackParams;
+    Cards: undefined;
 };
 
 export type PlaceStackParams = {

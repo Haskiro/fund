@@ -54,10 +54,10 @@ const Profile: FC = () => {
                         пользователя</Text> : null}
                 {status === "idle" && user ? <View>
                     <View className="flex-col gap-1 p-4 rounded-xl bg-[#F6FBFF]">
-                        <Text className="text-[#04764E] font-semibold text-[18px]">Имя: {user.firstName}</Text>
-                        <Text className="text-[#04764E] font-semibold text-[18px]">Фамилия: {user.lastName}</Text>
-                        <Text className="text-[#04764E] font-semibold text-[18px]">Почта: {user.email}</Text>
-                        <Text className="text-[#04764E] font-semibold text-[18px]">Дата регистрации: {dateFormatter(new Date(user.createdAt))}</Text>
+                        <Text className="text-[#123094] font-semibold text-[18px]">Имя: {user.firstName}</Text>
+                        <Text className="text-[#123094] font-semibold text-[18px]">Фамилия: {user.lastName}</Text>
+                        <Text className="text-[#123094] font-semibold text-[18px]">Почта: {user.email}</Text>
+                        <Text className="text-[#123094] font-semibold text-[18px]">Дата регистрации: {dateFormatter(new Date(user.createdAt))}</Text>
                     </View>
                     <TouchableOpacity onPress={clearToken}
                                       className="bg-[#FF0000] py-3 px-5 rounded-xl mt-5 w-[200]">

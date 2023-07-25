@@ -45,7 +45,7 @@ const Auth: FC = () => {
                     onChangeText={handleChange("number")}
                 ></TextInput>
                 <TouchableOpacity onPress={handleSubmit}
-                                  className="bg-[#04764E] py-3 px-5 rounded-xl"
+                                  className="bg-[#123094] py-3 px-5 rounded-xl"
                                   style={status === "error" ? {backgroundColor: "red"} : {}}
                                   disabled={status === "loading"}>
                     <Text className="text-center text-white font-bold">{status === "loading" ? "Загрузка..." : "Войти"}</Text>

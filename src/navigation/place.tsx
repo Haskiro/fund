@@ -14,7 +14,7 @@ const PlaceStackScreen = () => {
         component={Places}
       />
       <PlaceStack.Screen
-        options={{ headerTintColor: "#00A35E", headerTitle: "" }}
+        options={{ headerTintColor: "#123094", headerTitle: "" }}
         name="PlaceItem"
         component={PlaceItem}
       />

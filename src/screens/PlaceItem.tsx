@@ -47,7 +47,7 @@ const PlaceItem: FC<PlaceItemScreenStackProps> = ({route}) => {
             {status === "idle" && organization ? <>
                 {
                     organization.offers?.map(offer => (
-                        <View className="bg-[#04764E] px-3 py-5 mb-2" key={offer.id}>
+                        <View className="bg-[#123094] px-3 py-5 mb-2" key={offer.id}>
                             <Text className="text-white font-semibold">{offer.text}</Text>
                         </View>
                     ))

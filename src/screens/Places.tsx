@@ -11,7 +11,6 @@ import {PlaceStackParams} from "../navigation/types";
 import api from "../api";
 import {errorHandler} from "../api/errorHandler";
 import {Organization} from "../types/organization.type";
-import DropDownPicker from "react-native-dropdown-picker";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {AuthContext} from "../components/AuthProvider";
@@ -90,7 +89,7 @@ const Places: FC<PlacesScreenStackProps> = ({navigation}) => {
                                       onPress={() => setCategory(item)}
                                       className="bg-[#FAFAFA] border-1 border-black rounded-xl px-7 py-2 items-center mb-5"
                                       style={category === item ? {
-                                          backgroundColor: '#04764E'
+                                          backgroundColor: '#123094'
                                       } : null}
                                       key={item}
                                   ><Text style={category === item ? {

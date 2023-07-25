@@ -11,13 +11,24 @@
       "distribution": "internal",
       "android": {
         "buildType": "apk"
+      },
+      "ios": {
+        "resourceClass": "m-medium"
       }
     },
     "production": {
-
+      "ios": {
+        "resourceClass": "m-medium"
+      }
     }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "ios": {
+        "appleId": "pm@protactics.ru",
+        "ascAppId": "1672143122",
+        "appleTeamId": "63HTA26L82"
+      }
+    }
   }
 }

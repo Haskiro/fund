@@ -5,13 +5,11 @@ import * as Location from "expo-location"
 import {Organization} from "../types/organization.type";
 import api from "../api";
 import {errorHandler} from "../api/errorHandler";
-// import Geocoder from 'react-native-geocoding';
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {AuthContext} from "../components/AuthProvider";
 import {NativeStackScreenProps} from "@react-navigation/native-stack";
 import {MapStackParams} from "../navigation/types";
-// import {REACT_APP_MAPS_API_KEY} from "@env";
 
 export type MapRegionType = {
     latitude: number,
@@ -20,7 +18,6 @@ export type MapRegionType = {
     longitudeDelta: number
 }
 
-// Geocoder.init(REACT_APP_MAPS_API_KEY);
 type MapScreenStackProps = NativeStackScreenProps<
     MapStackParams,
     "Map"
@@ -66,7 +63,7 @@ const Map: FC<MapScreenStackProps> = ({navigation}) => {
         }
 
     }
-
+    //
     const handleNavigate = () => {
         setModalVisible(false)
         setCheckedItem(null);
@@ -103,7 +100,9 @@ const Map: FC<MapScreenStackProps> = ({navigation}) => {
     }, [])
 
     return (
-        <View className="flex-1">
+        <View
+            className="flex-1"
+        >
             {status === "loading" ?
                 <Text className="text-[20px] text-center relative top-[45%]">Загрузка...</Text> : null}
             {status === "error" ?
@@ -120,9 +119,10 @@ const Map: FC<MapScreenStackProps> = ({navigation}) => {
                             longitude: item.longitude
                         }} key={item.id} title={item.title} onPress={() => handleClickMarker(item)}/>
                     ))}
-                </MapView> : null}
+                </MapView>
+                : null}
             <Modal
-                animationType="slide"
+                animationType="fade"
                 transparent={true}
                 visible={modalVisible}>
                 <>
@@ -133,7 +133,7 @@ const Map: FC<MapScreenStackProps> = ({navigation}) => {
                         <Text className="text-[16px]">{checkedItem?.description}</Text>
                         <View className="flex-row justify-center gap-2 my-4">
                             <TouchableOpacity onPress={() => handleNavigate()}
-                                              className="bg-green-500 py-3 px-5 rounded-xl mt-5">
+                                              className="bg-[#123094] py-3 px-5 rounded-xl mt-5">
                                 <Text className="text-center text-white font-bold">Перейти на детальную
                                     страниц</Text>
                             </TouchableOpacity>
