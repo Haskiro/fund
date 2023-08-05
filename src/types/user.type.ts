@@ -8,5 +8,7 @@ export type User = {
     createdAt: string;
     updatedAt: string;
     registerCode: string;
-    loyaltyCard: string;
+    loyaltyCard: {
+        number: string
+    };
 }

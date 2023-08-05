@@ -56,14 +56,18 @@ const Profile: FC = () => {
                     <View className="flex-col gap-1 p-4 rounded-xl bg-[#F6FBFF]">
                         <Text className="text-[#123094] font-semibold text-[18px]">Имя: {user.firstName}</Text>
                         <Text className="text-[#123094] font-semibold text-[18px]">Фамилия: {user.lastName}</Text>
-                        <Text className="text-[#123094] font-semibold text-[18px]">Почта: {user.email}</Text>
-                        <Text className="text-[#123094] font-semibold text-[18px]">Дата регистрации: {dateFormatter(new Date(user.createdAt))}</Text>
+                        {user.email !== "user@fund.ru" ?
+                            <Text className="text-[#123094] font-semibold text-[18px]">Почта: {user.email}</Text> : null}
+                        {user.loyaltyCard ?
+                            <Text className="text-[#123094] font-semibold text-[18px]">Карта лояльности: {user.loyaltyCard.number}</Text> : null}
+                        <Text className="text-[#123094] font-semibold text-[18px]">Дата
+                            регистрации: {dateFormatter(new Date(user.createdAt))}</Text>
                     </View>
-                    <TouchableOpacity onPress={clearToken}
-                                      className="bg-[#FF0000] py-3 px-5 rounded-xl mt-5 w-[200]">
-                        <Text className="text-center text-white font-bold">Выйти</Text>
-                    </TouchableOpacity>
                 </View> : null}
+                <TouchableOpacity onPress={clearToken}
+                                  className="bg-[#FF0000] py-3 px-5 rounded-xl mt-5 w-[200]">
+                    <Text className="text-center text-white font-bold">Выйти</Text>
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
     );

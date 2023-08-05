@@ -23,7 +23,7 @@ type MapScreenStackProps = NativeStackScreenProps<
     "Map"
 >;
 
-const Map: FC<MapScreenStackProps> = ({navigation}) => {
+const Map: FC<MapScreenStackProps> = ({navigation, route}) => {
     const [mapRegion, setMapRegion] = useState<MapRegionType>({
         latitude: 55.7522200,
         longitude: 37.6155600,
@@ -83,7 +83,7 @@ const Map: FC<MapScreenStackProps> = ({navigation}) => {
         setStatus("loading")
         setTimeout(async () => {
             try {
-                const res = await api.organizations.getList("Все");
+                const res = await api.organizations.getList(route.params?.category || "Все");
                 setOrganizations(res)
                 setStatus("fulfilled");
             } catch (e) {
@@ -124,18 +124,18 @@ const Map: FC<MapScreenStackProps> = ({navigation}) => {
             <Modal
                 animationType="fade"
                 transparent={true}
-                visible={modalVisible}>
-                <>
+                visible={modalVisible}
+            >
+
                     <View className="h-[100%] bg-black opacity-25 absolute z-1 w-[100%]">
                     </View>
-                    <View className="bg-white absolute top-[30%] z-2 mx-2 rounded-xl p-2">
+                    <View className="bg-white mx-auto my-auto max-w-[700px] z-2 rounded-xl p-2">
                         <Text className="text-[20px] font-bold text-center my-4">{checkedItem?.title}</Text>
                         <Text className="text-[16px]">{checkedItem?.description}</Text>
-                        <View className="flex-row justify-center gap-2 my-4">
+                        <View className="flex-row justify-center gap-2 mx-2 my-4">
                             <TouchableOpacity onPress={() => handleNavigate()}
                                               className="bg-[#123094] py-3 px-5 rounded-xl mt-5">
-                                <Text className="text-center text-white font-bold">Перейти на детальную
-                                    страниц</Text>
+                                <Text className="text-center text-white font-bold">Смотреть</Text>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => handleClickMarker()}
                                               className="bg-[#FF0000] py-3 px-5 rounded-xl mt-5">
@@ -144,7 +144,6 @@ const Map: FC<MapScreenStackProps> = ({navigation}) => {
                         </View>
                     </View>
 
-                </>
             </Modal>
         </View>
     );

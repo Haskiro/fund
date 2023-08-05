@@ -37,7 +37,7 @@ const Auth: FC = () => {
         <SafeAreaView className="flex-1 bg-white justify-center items-center">
             <Text className="font-bold text-[25px] mb-5">Вход</Text>
             <View>
-                <Text className="mb-2 font-semibold text-[15px]">Введите код:</Text>
+                <Text className="mb-2 font-semibold text-[15px]">Введите номер карты:</Text>
                 <TextInput
                     style={{width: 250}}
                     className="bg-[#F5F5F5] mb-3 py-3 px-5 rounded-xl"

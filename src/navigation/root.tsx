@@ -24,17 +24,17 @@ const RootStackScreen: FC = () => {
                 component={Profile}
 
             />
-            <RootStack.Screen
-                options={{
-                    headerShown: false,
-                    tabBarActiveTintColor: "#123094",
-                    title: 'Скидочные карты',
-                    tabBarIcon: ({focused}) => (<FontAwesome name="credit-card-alt" size={22} color={focused ? '#123094' : 'black'} />),
-                }}
-                name="Cards"
-                component={Cards}
+            {/*<RootStack.Screen*/}
+            {/*    options={{*/}
+            {/*        headerShown: false,*/}
+            {/*        tabBarActiveTintColor: "#123094",*/}
+            {/*        title: 'Скидочные карты',*/}
+            {/*        tabBarIcon: ({focused}) => (<FontAwesome name="credit-card-alt" size={22} color={focused ? '#123094' : 'black'} />),*/}
+            {/*    }}*/}
+            {/*    name="Cards"*/}
+            {/*    component={Cards}*/}
 
-            />
+            {/*/>*/}
             {/*<RootStack.Screen*/}
             {/*    options={{*/}
             {/*        tabBarActiveTintColor: "#04764E",*/}
@@ -55,16 +55,16 @@ const RootStackScreen: FC = () => {
                 name="Places"
                 component={PlaceStackScreen}
             />
-            <RootStack.Screen
-                options={{
-                    tabBarActiveTintColor: "#123094",
-                    headerShown: false,
-                    title: 'Карта',
-                    tabBarIcon: ({focused}) => (<FontAwesome5 name="map-marker-alt" size={24} color={focused ? '#123094' : 'black'}/>)
-                }}
-                name="MapStack"
-                component={MapStackScreen}
-            />
+            {/*<RootStack.Screen*/}
+            {/*    options={{*/}
+            {/*        tabBarActiveTintColor: "#123094",*/}
+            {/*        headerShown: false,*/}
+            {/*        title: 'Карта',*/}
+            {/*        tabBarIcon: ({focused}) => (<FontAwesome5 name="map-marker-alt" size={24} color={focused ? '#123094' : 'black'}/>)*/}
+            {/*    }}*/}
+            {/*    name="MapStack"*/}
+            {/*    component={MapStackScreen}*/}
+            {/*/>*/}
         </RootStack.Navigator>
     )
         ;

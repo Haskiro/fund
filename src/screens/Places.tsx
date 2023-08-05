@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import React, {FC, useContext, useEffect, useState} from "react";
 import {NativeStackScreenProps} from "@react-navigation/native-stack";
-import {PlaceStackParams} from "../navigation/types";
+import {MapStackParams, PlaceStackParams} from "../navigation/types";
 import api from "../api";
 import {errorHandler} from "../api/errorHandler";
 import {Organization} from "../types/organization.type";
@@ -103,7 +103,11 @@ const Places: FC<PlacesScreenStackProps> = ({navigation}) => {
                     </> : null}
 
                 </View>
-                <Text className="font-bold text-[20px] mb-5 " style={open ? {marginTop: 130} : null}>Список</Text>
+                <View className="flex-row gap-5 items-center">
+                    <Text className="font-bold text-[20px] mb-5 " style={open ? {marginTop: 130} : null}>Список</Text>
+                    {status === "fulfilled" ? <TouchableOpacity className="mb-5" onPress={() => navigation.push("Map", {category: category})}><Text className="text-[16px] underline text-blue-600">Посмотреть
+                        на карте</Text></TouchableOpacity> : null}
+                </View>
                 {status === "loading" ? <Text className="text-[15px] px-7 py-4">Загрузка...</Text> : null}
                 {status === "error" ?
                     <Text className="text-[15px] px-7 py-4 gap-3 text-[#FF0000]">Ошибка загрузки данных</Text> : null}
@@ -117,7 +121,8 @@ const Places: FC<PlacesScreenStackProps> = ({navigation}) => {
                         >
 
                             <Image
-                                source={{uri: REACT_APP_API_URL + "/" + item.icon}} className="w-[30%] h-[90%] rounded-lg"/>
+                                source={{uri: REACT_APP_API_URL + "/" + item.icon}}
+                                className="w-[30%] max-w-[200px] h-[90%] rounded-lg"/>
                             <View>
                                 <Text className="text-[14px] font-bold">{item.title}</Text>
                                 <Text className="max-w-[70%] text-[11px]">

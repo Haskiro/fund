@@ -9,5 +9,6 @@ export type Organization = {
     address: string,
     latitude: number,
     longitude: number,
+    specialCardImageUrl: string | null,
     offers?: Offer[]
 }
